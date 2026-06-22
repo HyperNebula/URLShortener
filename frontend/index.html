@@ -1,18 +1,43 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-            
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
         <title>URL Shortener</title>
-        
-        <link rel="stylesheet" href="./style.css">
-        <link rel="icon" href="./favicon.ico" type="image/x-icon">
+
+        <link rel="stylesheet" href="./style.css" />
+        <link rel="icon" href="./favicon.ico" type="image/x-icon" />
     </head>
     <body>
-        <main>
-            <h1>URL Shortener</h1>  
-        </main>
+        <div class="container">
+            <div class="header">
+                <h1>URL Shortener</h1>
+                <p>Paste your long URL below to create a shorter link.</p>
+            </div>
+
+            <form class="shortener-form" id="shortenForm">
+                <input
+                    type="url"
+                    id="longUrl"
+                    placeholder="https://example.com/very/long/path/to/page"
+                    required
+                />
+                <button type="submit" id="submitBtn">Shorten Link</button>
+            </form>
+
+            <div class="result-container" id="resultContainer">
+                <p class="result-label">Your shortened link:</p>
+                <p class="result-text" id="shortUrlOutput"></p>
+                <button
+                    class="copy-btn"
+                    id="copyBtn"
+                    onclick="copyToClipboard()"
+                >
+                    Copy to Clipboard
+                </button>
+            </div>
+        </div>
     </body>
 </html>
