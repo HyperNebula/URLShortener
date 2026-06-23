@@ -5,14 +5,16 @@ app = FastAPI()
 
 
 class UrlLink(BaseModel):
-    url: str
+    url_str: str
 
 
 @app.post("/api/addLink")
 def read_link(url_link: UrlLink):
     url_link_dict = url_link.model_dump()
 
-    return {"Hello": url_link_dict.url}
+    print(url_link_dict)
+
+    return {"Hello": "World"}
 
 
 # @app.get("/items/{item_id}")
